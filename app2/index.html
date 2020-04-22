@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MARKERS APP</title>
+</head>
+<body>
+  <h1> Marker Management </h1>
+  <hr size="1">
+  <h3> New Marker </h3>
+  <form id="NewMarkerForm" action="/new_marker" method="POST">
+    <input type="text" placeholder="Marker Type" name="type">
+    <input type="text" placeholder="Geometry Type" name="geometry[type]">
+    <input type="text" placeholder="Marker Latitude" name="geometry[latitude]">
+    <input type="text" placeholder="Marker Longitude" name="geometry[longitude]">
+    <input type="text" placeholder="Marker Title" name="properties[title]">
+    <input type="text" placeholder="Marker Description" name="properties[description]">
+    <button type="submit">New Marker</button>
+  </form>
+  <hr size="1">
+  <h3> View Markers </h3>
+  <form action="/get_markers" method="GET">
+    <button type="submit">View Markers</button>
+  </form>
+
+</body>
+</html>

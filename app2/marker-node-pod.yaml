@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: marker-node-pod
+  labels:
+    name: marker-node-pod
+spec:
+  containers:
+  - image: antondeswardt/marker-node-app
+    name: marker-node-app
+    env:
+    - name: MONGODB_USER
+      value: "root"
+    - name: MONGODB_PASSWORD
+      value: "example"
+    - name: MONGODB_HOST
+      value: "mongodb-service"
+    - name: MONGODB_PORT
+      value: "27017"
+    - name: MONGODB_DB
+      value: "places"
+    - name: MONGODB_COLLECTION
+      value: "markers"
+    - name: EXPRESS_PORT
+      value: "8080"
+    - name: EXPRESS_HOST
+      value: "0.0.0.0"
+    ports:
+    - containerPort: 8080
+      hostPort: 8080
